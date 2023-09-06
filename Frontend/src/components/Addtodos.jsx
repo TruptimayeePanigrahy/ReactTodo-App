@@ -15,7 +15,7 @@ export default function Addtodos() {
             userid:user._id
         }
         console.log(obj)
-        fetch("http://localhost:3033/post/post",{
+        fetch("https://reactapp-ktfk.onrender.com/post/post",{
             method:"POST",
             headers:{"content-type":"application/json"},
             body:JSON.stringify(obj)

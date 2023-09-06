@@ -35,7 +35,7 @@ export default function Signup() {
                 password
             }
             console.log(obj)
-            fetch("http://localhost:3033/user/register",{
+            fetch("https://reactapp-ktfk.onrender.com/user/register",{
                 method:"POST",
                 headers:{
                 "content-type":"application/json"

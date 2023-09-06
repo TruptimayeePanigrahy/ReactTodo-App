@@ -25,7 +25,7 @@ export default function Mydata() {
         // Send the updated post data to the backend
         console.log("Updated Post:", updatedPost);
         // ... implement update logic ...
-        fetch(`http://localhost:3033/post/post/${id}`, {
+        fetch(`https://reactapp-ktfk.onrender.com/post/post/${id}`, {
             method: "PUT",
             headers: { "Content-Type": "application/json" }, 
             body: JSON.stringify(updatedPost)
@@ -51,7 +51,7 @@ export default function Mydata() {
     function deletetodos(ele){
 
 
-        fetch(`http://localhost:3033/post/post/${ele}`,{
+        fetch(`https://reactapp-ktfk.onrender.com/post/post/${ele}`,{
             method:"DELETE",
             header:{"content-type":"application/json"}
         })
@@ -73,7 +73,7 @@ export default function Mydata() {
     }
 
     function fetchdata(){
-        fetch(`http://localhost:3033/post/${user._id}`)
+        fetch(`https://reactapp-ktfk.onrender.com/post/${user._id}`)
         .then((res)=>res.json())
         .then((data)=>{
             if(data.msg){

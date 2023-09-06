@@ -8,7 +8,7 @@ export default function Showdata() {
     const [selectedCards, setSelectedCards] = useState({});
 
     useEffect(() => {
-        fetch("http://localhost:3033/post/allpost")
+        fetch("https://reactapp-ktfk.onrender.com/post/allpost")
             .then((res) => res.json())
             .then((data) => {
                 setpostdata(data.allpost);
