@@ -12,11 +12,12 @@ const auth=async (req,res,next)=>{
     if(blacktoken){
         return res.status(400).send({"msg":"please login first"})
     }
-    let decoded=jwt.verify(token,"rajesh")
+    let decoded=jwt.verify(token,"laddu")
     if(!decoded){
         return res.status(400).send({"msg":"something went wrong please login"})
     }
-    req.body.userid=decoded.id
+        req.body.userid = decoded.id
+        // req.body.userid=decoded.name
     // console.log("auth",req.body.userid)
     req.body.role=decoded.role
     // console.log(req.body)

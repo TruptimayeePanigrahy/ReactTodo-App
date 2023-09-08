@@ -3,7 +3,8 @@ const mongoose=require("mongoose")
 const userpostschema=mongoose.Schema({
     title:String,
     description:String,
-    userid:String
+    userid: String,
+    username:String
 },{
     versionKey:false,
     timestamps:true

@@ -30,8 +30,8 @@ userpost.get("/:userid",auth,async (req,res)=>{
 
 userpost.post("/post",auth,async (req,res)=>{
     try {
-        let {title,description,userid}=req.body
-        let newpost=new userpostmodel({title,description,userid})
+        let {title,description,userid,username}=req.body
+        let newpost=new userpostmodel({title,description,userid,username})
         await newpost.save()
         res.send({"msg":"post save successfull"})
     } catch (error) {

@@ -47,7 +47,7 @@ userroute.post("/login",async (req,res)=>{
         if(!hasspass){
             return res.status(400).send({"msg":"password incorrect"})
         }
-        let token=jwt.sign({id:user._id,role:user.role},"rajesh",{expiresIn:"60m"})
+        let token=jwt.sign({id:user._id,role:user.role},"laddu",{expiresIn:"60m"})
         client.set('token', token, 'EX', 21600);
         res.status(200).send({"msg":"login successfull","userdetails":user,"token":token})
     } catch (error) {
