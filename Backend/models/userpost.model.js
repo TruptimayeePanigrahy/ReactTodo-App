@@ -5,11 +5,10 @@ const userpostschema=mongoose.Schema({
     description:String,
     userid: String,
     username: String,
-     likes: {
-    type: Number,
-    default: 0, // Initialize the like count to 0
+     type: [String], // Store user IDs who liked the post
+    default: []
   },
-},{
+{
     versionKey:false,
     timestamps:true
 })
