@@ -3,7 +3,10 @@ import "./showcard.css";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import SmsIcon from '@mui/icons-material/Sms';
 
+import { useUser } from '../UserContext';
 export default function Showdata() {
+    const { user } = useUser();
+    console.log("user",user)
     const [postdata, setpostdata] = useState([]);
     const [selectedCards, setSelectedCards] = useState({});
 
@@ -31,7 +34,8 @@ export default function Showdata() {
                 
                 <div key={ele._id} className={`showcard ${selectedCards[ele._id] ? 'selected' : ''}`}>
                     <h1>{ele.title}</h1>
-                    <p>{ele.description}</p><br/>
+                    <p>{ele.description}</p><br />
+                    {console.log(ele)}
                     <h3>posted By:- <span className='username'>{ele.username}</span> </h3>
                     <div className='bottom2'>
                         <button onClick={() => toggleFavorite(ele._id)}>

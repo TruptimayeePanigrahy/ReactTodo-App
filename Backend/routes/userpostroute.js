@@ -28,7 +28,7 @@ userpost.get("/:userid",auth,async (req,res)=>{
     }
 })
 
-userpost.post("/post",async (req,res)=>{
+userpost.post("/post",auth,async (req,res)=>{
     try {
         console.log(req.body)
         let {title,description,userid,username}=req.body

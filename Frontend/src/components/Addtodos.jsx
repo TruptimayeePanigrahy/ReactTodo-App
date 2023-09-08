@@ -4,7 +4,8 @@ import "./addtodos.css"
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 export default function Addtodos() {
-    const {user}=useUser()
+  const { user } = useUser()
+  
     const [title,settitle]=useState("")
     const [des,setdes]=useState("")
     const handlesubmit=(e)=>{
