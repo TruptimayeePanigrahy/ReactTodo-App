@@ -64,6 +64,52 @@ userpost.delete("/post/:id",auth,async(req,res)=>{
 })
 
 
+// likes implement
+
+userpost.post("/:postId/like", auth, async (req, res) => {
+  try {
+    const { postId } = req.params;
+    const { userId } = req.body;
+
+    const post = await userpostmodel.findById(postId);
+    if (!post) {
+      return res.status(404).json({ error: "Post not found" });
+    }
+
+    // Check if the user has already liked the post
+    if (post.likes.includes(userId)) {
+      return res.status(400).json({ error: "User has already liked this post" });
+      }
+      post.likes.push(userId);
+    post.likesCount += 1;
+    
+    await post.save();
+
+    res.json({ likes: post.likesCount });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+
+userpost.get("/:postId/like", async (req, res) => {
+  try {
+    const { postId } = req.params;
+
+    const post = await userpostmodel.findById(postId);
+    if (!post) {
+      return res.status(404).json({ error: "Post not found" });
+    }
+
+    res.json({ likes: post.likesCount });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+
 
 
 
