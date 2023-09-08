@@ -31,12 +31,13 @@ export default function Showdata() {
     return (
         <div className='appendcard2'>
             {postdata.map(ele => (
-                
+            
                 <div key={ele._id} className={`showcard ${selectedCards[ele._id] ? 'selected' : ''}`}>
                     <h1>{ele.title}</h1>
                     <p>{ele.description}</p><br />
                     {console.log(ele)}
-                    <h3>posted By:- <span className='username'>{ele.username}</span> </h3>
+                        <h3>posted By:- <span className='username'>{ele.username}</span> </h3>
+                       
                     <div className='bottom2'>
                         <button onClick={() => toggleFavorite(ele._id)}>
                             <FavoriteIcon style={{ color: selectedCards[ele._id] ? 'red' : '#058665' }} />
@@ -44,7 +45,8 @@ export default function Showdata() {
                         </button>
                         <button><SmsIcon style={{color:"#058665"}}/> <span></span></button>
                     </div>
-                </div>
+                    </div>
+                    
             ))}
         </div>
     );

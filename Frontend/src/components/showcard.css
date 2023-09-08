@@ -1,24 +1,30 @@
 .appendcard2{
-    max-height: 500px;
+    max-height: 550px;
     overflow-y: auto;
+   
 }
-.showcard{
-    /* border: 2px solid green; */
-    width: 95%;
+
+.showcard{ 
+    
+     width: 80%;
     margin: 10px auto;
-    background-image: linear-gradient(45deg, #5b88f1 0%, #e4efe9 100%);
+    background-color: #f8f3f30d;
     border-radius: 15px;
-    /* height: 150px; */
+    color: white;
+    border: 1px solid white;
     text-align: start;
     padding-left: 30px;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
+     flex-direction: column;
+} 
+ .showcard   h1{ 
+     margin-bottom: 5px;
+ justify-content: space-between; 
     height: 100%;
-}
-.showcard h1{
-    margin-bottom: 5px;
-    color: rgb(27, 26, 26);
+    color: white;  
+ }
+ .showcard  { 
+   
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .showcard p{
@@ -27,8 +33,11 @@
 
 .bottom2 {
     display: flex;
+    
     justify-content: flex-end; 
+    
 }
+
 
 .bottom2 button {
     margin-left: 10px;
@@ -41,13 +50,13 @@
     cursor: pointer;
 }
 
-.username{
+/* .username{
     position: relative;
     text-decoration: none;
-    color: blue;
-    font-size: 1.5em;
+    color: #058665;
+    font-size: 1.5em; */
 
-    &:after {
+    /* &:after {
       content: "";
       position: absolute;
       left: 0;
@@ -65,5 +74,5 @@
       transform-origin: left;
       transition: transform 0.25s ease-in-out;
     }
-  }
-
+  } */
+ 
