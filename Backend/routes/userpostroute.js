@@ -85,10 +85,10 @@ userpost.post("/:postId/like", auth, async (req, res) => {
     
     await post.save();
 
-    res.json({ likes: post.likesCount });
+    res.send({ likes: post.likesCount });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ error: "Internal server error" });
+    res.status(500).send({ error: "Internal server error" });
   }
 });
 
@@ -102,7 +102,7 @@ userpost.get("/:postId/like", async (req, res) => {
       return res.status(404).json({ error: "Post not found" });
     }
 
-    res.json({ likes: post.likesCount });
+    res.send({ likes: post.likesCount });
   } catch (error) {
     console.error(error);
     res.status(500).json({ error: "Internal server error" });
