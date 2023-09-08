@@ -57,17 +57,18 @@ export default function Signup() {
                 })
             
         }else{
-            alert("not match password and conform password")
+            alert("not match password and confirm password")
         }
     }
     
   return (
-    <div className='main'>
-        <h1 style={{color:"white",margin:"30px",borderBottom:"1px solid #058665"}}>Signup Here !!</h1>
-      <form onSubmit={takecare} >
+    <div className='main123'>
+      
+          <form onSubmit={takecare} >
+              <h1  className='heading'>Signup Here !!</h1>
         <label>
             
-            <input type="text" value={name} onChange={handlename} placeholder='Enter your name'/>
+            <input type="text" value={name} onChange={handlename} placeholder='Enter your Name'/>
            
         </label>
         <label>
@@ -82,12 +83,12 @@ export default function Signup() {
         </label>
         <label>
             
-            <input type="text" value={conpass} onChange={handleconpass} placeholder='Conform your password'/>
+            <input type="text" value={conpass} onChange={handleconpass} placeholder='Confirm your password'/>
             
         </label>
-        <input type="Submit" />
+              <input type="submit" value={"Signin"} />
         <br/><br/>
-        <p>Already user ? <Link to="/Login" style={{color:"#058665"}}>click here</Link></p>
+         <p style={{fontSize:"18px"}}>Already have an account ? <Link to="/Login" style={{color:"#058665"}}>Login</Link></p>
       </form>
       
     </div>

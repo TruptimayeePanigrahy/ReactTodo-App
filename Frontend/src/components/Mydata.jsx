@@ -104,7 +104,7 @@ export default function Mydata() {
         <div className='appendcard'>
           {postdata.map(ele => (
             <div key={ele._id} className='card'>
-              <h2>{ele.title}</h2>
+              <h1>{ele.title}</h1>
               <p>{ele.description}</p>
               <div className='bottom1'>
                 <button onClick={() => edit(ele)}>Edit</button>

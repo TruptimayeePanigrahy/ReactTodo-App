@@ -12,7 +12,8 @@ export default function Addtodos() {
         let obj={
             title,
             description:des,
-            userid:user._id
+            userid:user._id,
+            username:user.name
         }
         console.log(obj)
         fetch("https://reactapp-ktfk.onrender.com/post/post",{
@@ -44,13 +45,13 @@ export default function Addtodos() {
         setdes(e.target.value)
     }
   return (
-    <div  className='addtodos'>
+    <div className='addtodos'>
       <form onSubmit={handlesubmit}>
         <h3>Title</h3>
         <input type="text" value={title} onChange={handletitle} placeholder='Enter title'/>
         <h3>Description</h3>
         <input type='text' value={des} onChange={deshandle} placeholder='Enter description'/>
-        <input type="submit" value="Submit"/>
+        <input type="submit" value="Add"/>
       </form>
     </div>
   )

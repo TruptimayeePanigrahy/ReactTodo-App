@@ -38,7 +38,7 @@ function EditModal({ isOpen, onRequestClose, post, onSubmit }) {
     >
       <h2 style={{textAlign:"center",color:"#058665"}}>Edit Post</h2>
       <label>
-        Title<br/>
+        Title
         <input type="text" value={title} onChange={handleTitleChange} />
       </label>
       <label>
@@ -49,7 +49,6 @@ function EditModal({ isOpen, onRequestClose, post, onSubmit }) {
         <button  onClick={handleSubmit}>Save</button>
       <button onClick={onRequestClose}>Cancel</button>
       </div>
-      
     </Modal>
   );
 }

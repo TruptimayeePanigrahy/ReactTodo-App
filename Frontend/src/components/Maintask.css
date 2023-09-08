@@ -1,31 +1,26 @@
+
 .main{
-    width: 98%;
+    width: 98%;  
+    margin: auto;     
+    display: grid;
+    grid-template-columns: 20% 75%;
+    align-items: start;
+    gap: 10px;
    
-    margin-top: 20px;
-    /* border: 2px solid red; */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: start;
 }
 
 .left{
-    /* border: 2px solid red; */
-    width: 20%;
-    height: 98%;
+    margin-top: 0px;
+    /* border: 2px solid blue; */
+    height: 500px;
     color: white;
     backdrop-filter: blur(5px);
-    
 } 
 .right{
     /* border: 2px solid green; */
-    /* margin-top: -110px; */
-    display: flex;
-    justify-content: start;
-    /* align-items:flex-start; */
-    width: 75%;
     backdrop-filter: blur(5px);
-        
-} 
+    height: 500px;   
+}  
 .todoss{
     width: 80%;
     height: 35px;
@@ -34,7 +29,7 @@
     border: none;
     font-size: large;
     background-color:#058665;
-    color:white;
+    color: white;
     cursor: pointer;
     
 }

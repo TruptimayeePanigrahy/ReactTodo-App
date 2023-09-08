@@ -33,7 +33,7 @@ export default function Navbar() {
         <h1>NOTES APP</h1>
       </div>
       <div className='content'>
-        <Link  to="/" style={{textDecoration:"none"}}><h3 >Home</h3></Link>
+        <Link to="/" style={{textDecoration:"none"}}><h3>Home</h3></Link>
         
         <h3>Profile</h3>
         {user?(<button id='logout'onClick={logout}><h3>Logout</h3></button>):(<Link to="/login" style={{textDecoration:"none"}}><h3>LogIn/Signup</h3></Link>)}

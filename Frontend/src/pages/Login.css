@@ -1,5 +1,5 @@
 /* Apply some basic styling to the form container */
-.main {
+.main123 {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,18 +17,14 @@
     color: white;
     padding: 5%;
     border: 1px solid #ccc;
-    border-radius:25px;
-    box-shadow: 0 2px 5px rgba(5, 134, 101, 0.5);
-    width: 300px;
-    /* background-color: #f9f9f9; */
-    backdrop-filter: blur(5px);
-     box-shadow: 0 0 2px #fff, 0 0 10px #fff, 0 0 20px #058665, 0 0 30px #058665,
-    0 0 40px #058665, 0 0 50px #058665;
-  -webkit-animation: blink 0.7s infinite alternate;
-  animation: blink 0.7s infinite alternate;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    background-color: #f8f3f30d;
+    /* backdrop-filter: blur(5px); */
   }
   ::placeholder {
-    color:#058665; /* Replace with the desired color value */
+    color: #BDBDBD; /* Replace with the desired color value */
 }
 
   
@@ -38,11 +34,12 @@
   input[type="email"],
   input[type="password"],
   input[type="text"]{
-    width: 90%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 95%;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid white;
+   font-size: 16px;
     outline: none;
     color: white;
     background-color: transparent;
@@ -56,6 +53,7 @@
     padding: 10px 25px;
     border-radius: 3px;
     cursor: pointer;
+    margin-top: 30px;
   }
   
   /* Style for submit button on hover */
@@ -70,3 +68,8 @@
   }
   
   
+.heading{
+  color: white;
+  /* border-bottom: 1px solid red; */
+  margin-bottom: 30px;
+}

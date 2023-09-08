@@ -63,11 +63,11 @@ export default function Login() {
         })
     }
   return (
-    <div className='main'>
+    <div className='main123'>
       
-      <h1 style={{color:"white",margin:"30px",borderBottom:"1px solid #058665"}} >Login Here !!</h1>
+     
       <form onSubmit={submitdetalis}>
-      
+       <h1 style={{color:"white"}} className='heading' >Login Here !!</h1>
         <lebel>
            
             <input type="email" value={email} onChange={handleemail} placeholder=' Enter your email'/>
@@ -79,9 +79,9 @@ export default function Login() {
             <input type="password" value={password} onChange={handlepass} placeholder=' Enter your password'/>
             
         </lebel>
-        <input type="Submit" />
+        <input type="submit" value={"Login"}  />
         <br/><br/>
-        <p>New user?  <Link to="/Signup" style={{color:"#058665"}}>click here</Link></p>
+        <p style={{fontSize:"18px"}}>New user?  <Link to="/Signup" style={{color:"#058665"}}>Signup</Link></p>
         
       </form>
       
