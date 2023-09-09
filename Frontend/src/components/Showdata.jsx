@@ -4,49 +4,80 @@ import FavoriteIcon from '@mui/icons-material/Favorite';
 import SmsIcon from '@mui/icons-material/Sms';
 
 import { useUser } from '../UserContext';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function Showdata() {
     const { user } = useUser();
-    console.log("user",user)
     const [postdata, setpostdata] = useState([]);
     const [selectedCards, setSelectedCards] = useState({});
+    const [favoriteCounts, setFavoriteCounts] = useState({}); 
 
     useEffect(() => {
         fetch("https://reactapp-ktfk.onrender.com/post/allpost")
             .then((res) => res.json())
             .then((data) => {
                 setpostdata(data.allpost);
+                initializeFavoriteCounts(data.allpost);
             })
             .catch((error) => {
-                console.log(error);
+                console.error(error);
             });
     }, []);
 
-    const toggleFavorite = (cardId) => {
-        setSelectedCards(prevSelectedCards => ({
-            ...prevSelectedCards,
-            [cardId]: !prevSelectedCards[cardId]
-        }));
+    const initializeFavoriteCounts = (allPosts) => {
+        const initialCounts = {};
+        allPosts.forEach((post) => {
+            initialCounts[post._id] = post.likesCount || 0;
+        });
+        setFavoriteCounts(initialCounts);
+    };
+
+    const toggleFavorite = (postId) => {
+        console.log(user,postId)
+        if (!user) {
+            // Handle the case when the user is not authenticated
+            return;
+        }
+
+        fetch(`https://reactapp-ktfk.onrender.com/post/${postId}/like`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ userId: user._id }),
+        })
+        .then((res) => res.json())
+        .then((data) => {
+            setFavoriteCounts((prevCounts) => ({
+                ...prevCounts,
+                [postId]: data.likes,
+            }));
+            setSelectedCards((prevSelectedCards) => ({
+                ...prevSelectedCards,
+                [postId]: !prevSelectedCards[postId],
+            }));
+        })
+        .catch((error) => {
+            console.error(error);
+        });
     };
 
     return (
         <div className='appendcard2'>
             {postdata.map(ele => (
-            
                 <div key={ele._id} className={`showcard ${selectedCards[ele._id] ? 'selected' : ''}`}>
-                    <h1>{ele.title}</h1>
-                    <p>{ele.description}</p><br />
-                    {console.log(ele)}
-                        <h3>posted By:- <span className='username'>{ele.username}</span> </h3>
-                       
+                    <h1>Title: {ele.title}</h1>
+                    <p>Description: {ele.description}</p><br />
+                    <h3>Posted By: <span className='username'>{ele.username}</span> </h3>
                     <div className='bottom2'>
                         <button onClick={() => toggleFavorite(ele._id)}>
                             <FavoriteIcon style={{ color: selectedCards[ele._id] ? 'red' : '#058665' }} />
-                            <span></span>
+                            <span>{favoriteCounts[ele._id] || 0}</span>
                         </button>
-                        <button><SmsIcon style={{color:"#058665"}}/> <span></span></button>
+                        <button><SmsIcon style={{ color: "#058665" }} /> <span></span></button>
                     </div>
-                    </div>
-                    
+                </div>
             ))}
         </div>
     );
