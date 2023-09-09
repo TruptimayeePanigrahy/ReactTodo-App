@@ -71,7 +71,7 @@ export default function Login() {
         <lebel>
            
             <input type="email" value={email} onChange={handleemail} placeholder=' Enter your email'/>
-            <h1>{email}</h1>
+            {/* <h1>{email}</h1> */}
             
         </lebel>
         <lebel>

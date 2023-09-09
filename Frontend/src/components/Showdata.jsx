@@ -36,8 +36,21 @@ export default function Showdata() {
     const toggleFavorite = (postId) => {
         console.log(user,postId)
         if (!user) {
-            // Handle the case when the user is not authenticated
+          try {
+                toast.warning("Please Login first", {
+                    position: 'top-right',
+                    autoClose: 3000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                });
+            } catch (error) {
+                console.error(error);
+            }
             return;
+            
         }
 
         fetch(`https://reactapp-ktfk.onrender.com/post/${postId}/like`, {
@@ -72,6 +85,7 @@ export default function Showdata() {
                     <h3>Posted By: <span className='username'>{ele.username}</span> </h3>
                     <div className='bottom2'>
                         <button onClick={() => toggleFavorite(ele._id)}>
+                            {console.log(ele._id)}
                             <FavoriteIcon style={{ color: selectedCards[ele._id] ? 'red' : '#058665' }} />
                             <span>{favoriteCounts[ele._id] || 0}</span>
                         </button>
