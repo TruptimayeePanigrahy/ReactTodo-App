@@ -2,7 +2,7 @@
 
 # React Notes App
 
-A minimalistic, customisable todo app.
+It is an basic react todo app where user can see other notes,post,edit and delete their own notes.
 
 ## Demo
 
@@ -17,6 +17,7 @@ A minimalistic, customisable todo app.
 - Edit Notes
 - Add notes
 - Delete notes
+- Like notes
 
 ## Built with
 
