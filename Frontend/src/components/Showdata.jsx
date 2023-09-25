@@ -14,7 +14,7 @@ export default function Showdata() {
     const [favoriteCounts, setFavoriteCounts] = useState({}); 
 
     useEffect(() => {
-        fetch("https://reactapp-ktfk.onrender.com/post/allpost")
+        fetch("https://reactnotesapp-bffb.onrender.com/post/allpost")
             .then((res) => res.json())
             .then((data) => {
                 setpostdata(data.allpost);
@@ -53,7 +53,7 @@ export default function Showdata() {
             
         }
 
-        fetch(`https://reactapp-ktfk.onrender.com/post/${postId}/like`, {
+        fetch(`https://reactnotesapp-bffb.onrender.com/post/${postId}/like`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

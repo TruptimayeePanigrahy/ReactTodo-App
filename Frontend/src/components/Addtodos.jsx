@@ -17,7 +17,7 @@ export default function Addtodos() {
             username:user.name
         }
         console.log(obj)
-        fetch("https://reactapp-ktfk.onrender.com/post/post",{
+        fetch("https://reactnotesapp-bffb.onrender.com/post/post",{
             method:"POST",
             headers:{"content-type":"application/json"},
             body:JSON.stringify(obj)
