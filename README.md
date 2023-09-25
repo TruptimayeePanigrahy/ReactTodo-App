@@ -6,7 +6,7 @@ It is an basic react todo app where user can see other notes,post,edit and delet
 ## Demo
 
 - Demo hosted on Vercel:- https://react-todo-app-gray.vercel.app/
-- Backend Url:-https://reactapp-ktfk.onrender.com/
+- Backend Url:-https://reactnotesapp-bffb.onrender.com/
 
 ## Features
 
